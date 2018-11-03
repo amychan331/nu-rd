@@ -11,22 +11,27 @@
   flex-grow: 1;
 }
 .app-header {
-  background-color: #222;
-  height: 105px;
+  background-color: #fff;
   padding: 20px;
-  color: white;
+  color: #000;
   padding-left: 60px;
+  border-bottom: solid gray 1px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 10px 6px 0px rgba(128,128,128,0.75);
 }
 .app-left-nav {
   display: flex;
 }
 .app-title {
   font-size: 32px;
-  margin: 0px;
+  margin: 0 18px 0 0;
   margin-top: 10px;
+  display: inline-block;
 }
 .app-intro {
   font-size: large;
+  display: inline-block;
 }
 .deploy-button-wrapper {
   margin-right: 20px;

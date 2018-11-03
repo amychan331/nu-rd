@@ -5,5 +5,5 @@
   width: 95%;
 }
 .editable[contenteditable="true"] {
-  outline: 3px solid #efefef;
+  outline: 2px solid #efefef;
 }

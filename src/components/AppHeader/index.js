@@ -19,6 +19,17 @@ const AppHeader = (props) => {
             </div>
           </div>
         </div>
+<<<<<<< HEAD
+=======
+        <div className='deploy-button-wrapper'>
+          <a
+            target='_blank'
+            rel='noopener noreferrer'
+            href='https://app.netlify.com/start/deploy?repository=https://github.com/netlify/fauna-one-click&stack=fauna'>
+            <img src={deployButton} className='deploy-button' alt='deploy to netlify' />
+          </a>
+        </div>
+>>>>>>> 07ca7a322cc8c4bb7b8929c8b021db69bf239339
       </div>
     </header>
   )

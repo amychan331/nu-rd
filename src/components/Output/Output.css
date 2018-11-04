@@ -1,9 +1,9 @@
-.output-container{
+.output-words-container{
     border: solid gray 1px;
     background: #fff;
     width: 500px;
     height: 200px;
 }
-.output{
+.output-words{
     margin: 18px;
 }

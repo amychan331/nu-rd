@@ -66,21 +66,20 @@ class Input extends Component{
 
           <form className={"form " + this.props.hide}>
  
-              <div>
-              <input
-                  value={this.state.commentInput}
-                  name="commentInput"
-                  onChange={this.handleInputChange}
-                  type="text"
-              />
-
+            <div className="form-inner">
+                <input
+                    value={this.state.commentInput}
+                    name="commentInput"
+                    onChange={this.handleInputChange}
+                    type="text"
+                />
            
               <button classname="btn-1"
                   type="submit"
                   name="action"
                   onClick={this.handleFormSubmit}
                   >
-                 Submit
+                    <span>Submit</span>
                  </button>
                  </div>
           
@@ -90,7 +89,7 @@ class Input extends Component{
                  name="action"
                  onClick={this.handleFormSubmit}
                  >
-                 Clear
+                   <span>Clear</span>
                  </button>
                  </div>
 

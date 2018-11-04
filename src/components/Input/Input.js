@@ -22,6 +22,26 @@ class Input extends Component {
       <div>
         <div>
           <label htmlFor="comment">Enter Math Equation</label>
+      
+<form className={"form " + this.props}>
+  <div className="form-inner">
+    <input
+      value={this.state.inputFormula}
+      name="mathInput"
+      onChange={this.handleInputChange}
+      type="text"
+    />
+    <div className="col-container">
+      <div className="col-inner">
+        <button
+          classname="btn-1"
+          type="submit"
+          name="action"
+          onClick={this.handleFormSubmit}
+        >
+          <span>Submit</span>
+        </button>
+      </div>
 
 
           <form className={"form " + this.props}>
@@ -55,6 +75,24 @@ class Input extends Component {
 
               </form>
 
+
+      {/*
+      <div />
+      <div className="col-inner" />
+      <div className="col-inner">
+        <button
+          classname="btn-2"
+          type="reset"
+          name="action"
+          onClick={this.handleFormSubmit}
+        >
+          <span>Clear</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+*/}
 
           <h2 className="gist-comment">Math Word Problem</h2>
           <div>

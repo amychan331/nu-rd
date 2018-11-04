@@ -12,7 +12,7 @@ exports.handler = (event, context, callback) => {
   console.log(data)
   console.log(id)
   console.log('Function `read-query-data` invoked')
-  return client.query(q.Get(q.Match(q.Index("verb_by_operator"), "%2B")))
+  return client.query(q.Get(q.Match(q.Index("verb_by_operator"), id)))
   .then((response) => {
     return callback(null, {
       statusCode: 200,

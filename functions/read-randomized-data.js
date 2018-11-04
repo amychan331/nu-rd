@@ -11,7 +11,6 @@ exports.handler = (event, context, callback) => {
   return client.query(q.Paginate(q.Match(q.Ref('indexes/all_getRandomWord'))))
   .then((response) => {
     const wordRefs = response.data
-    console.log("wordRefs", wordRefs)
     const getWordDataQuery = wordRefs.map(ref => q.Get(ref))
     return client.query(getWordDataQuery).then((ret) => {
       const data = ret[0]["data"]

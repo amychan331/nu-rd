@@ -1,5 +1,8 @@
-.form-inner > *{
-    display: block;
+.col-container{
+    display: flex;
+}
+.col-inner{
+    flex: 1;
 }
 .form-inner input{
     padding: 0;

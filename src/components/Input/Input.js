@@ -80,9 +80,20 @@ class Input extends Component{
                   name="action"
                   onClick={this.handleFormSubmit}
                   >
-                  Button
-                  </button>
-                  </div>
+                 Submit
+                 </button>
+                 </div>
+          
+             <div>
+             <button classname="btn-2"
+                 type="reset"
+                 name="action"
+                 onClick={this.handleFormSubmit}
+                 >
+                 Clear
+                 </button>
+                 </div>
+
               </form>
 
               <h2 className="gist-comment">Comments </h2>

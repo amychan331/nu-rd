@@ -2,7 +2,7 @@ import faunadb from 'faunadb';
 import querystring from "querystring";
 
 //    start of URL [changes!]: https://keen-boyd-38d83f.netlify.com/
-                                // https://master--keen-boyd-38d83f.netlify.com/.nelify/functions/get-data?operator=%2B
+// https://master--keen-boyd-38d83f.netlify.com/.nelify/functions/get-data?operator=%2B
 //    ending of URL: /.netlify/functions/get-data?operator=%2B    <<
 // OUTPUT: { name1: 'Veronica', name2: 'Amy', noun: 'books', verb: 'gives'};
 
@@ -24,11 +24,12 @@ const netlifyFunction = async (event, context, cb) => {
 
   const whichOp = event.queryStringParameters.operator || 'does something';
 
-  if (!checkForFaunaKey()){
-    return {
-      statusCode: 500
-    };
-  }
+  // if (!checkForFaunaKey()){
+  //   return {
+  //     statusCode: 500,
+  //     body: JSON.stringify(error)
+  //   };
+  // }
 
   /* Query db LOOKUP whichOp */
   //TODO:

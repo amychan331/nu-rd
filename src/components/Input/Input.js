@@ -66,24 +66,26 @@ class Input extends Component{
 
           <form className={"form " + this.props.hide}>
  
-              <div>
-              <input
-                  value={this.state.commentInput}
-                  name="commentInput"
-                  onChange={this.handleInputChange}
-                  type="text"
-              />
+            <div className="form-inner">
+                <input
+                    value={this.state.commentInput}
+                    name="commentInput"
+                    onChange={this.handleInputChange}
+                    type="text"
+                />
 
-           
-              <button classname="btn-1"
-                  type="submit"
-                  name="action"
-                  onClick={this.handleFormSubmit}
-                  >
-                  Button
-                  </button>
-                  </div>
-              </form>
+        
+                <button classname="btn-1"
+                    type="submit"
+                    name="action"
+                    onClick={this.handleFormSubmit}
+                    >
+                    <span>
+                        Transform
+                    </span>
+                </button>
+                </div>
+            </form>
 
               <h2 className="gist-comment">Comments </h2>
               <div>

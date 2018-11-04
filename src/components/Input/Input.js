@@ -73,19 +73,27 @@ class Input extends Component{
                     onChange={this.handleInputChange}
                     type="text"
                 />
+           
+              <button classname="btn-1"
+                  type="submit"
+                  name="action"
+                  onClick={this.handleFormSubmit}
+                  >
+                    <span>Submit</span>
+                 </button>
+                 </div>
+          
+             <div>
+             <button classname="btn-2"
+                 type="reset"
+                 name="action"
+                 onClick={this.handleFormSubmit}
+                 >
+                   <span>Clear</span>
+                 </button>
+                 </div>
 
-        
-                <button classname="btn-1"
-                    type="submit"
-                    name="action"
-                    onClick={this.handleFormSubmit}
-                    >
-                    <span>
-                        Transform
-                    </span>
-                </button>
-                </div>
-            </form>
+              </form>
 
               <h2 className="gist-comment">Comments </h2>
               <div>

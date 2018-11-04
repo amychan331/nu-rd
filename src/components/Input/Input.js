@@ -21,7 +21,7 @@ class Input extends Component {
     return (
       <div>
         <div>
-          <label htmlFor="comment">Enter Math Problem</label>
+          <label htmlFor="comment">Enter Math Equation</label>
 
 
           <form className={"form " + this.props}>
@@ -56,7 +56,7 @@ class Input extends Component {
               </form>
 
 
-          <h2 className="gist-comment">Comments </h2>
+          <h2 className="gist-comment">Math Word Problem</h2>
           <div>
             {(this.state.results && this.state.results.name) || ""}
             {/* {this.props.comments.map(comment => (

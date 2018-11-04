@@ -6,11 +6,15 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    results: {},
-    name1: "",
+    results: {
+      name: "james",
+      hair_color: "brown"
+    },
+    name: "James",
     name2: "",
     noun: "",
-    verb: ""
+    verb: "",
+    hair_color: "brown"
   };
 
   handleFormSubmit = inputFormula => {
@@ -26,7 +30,10 @@ class App extends Component {
           return results.json();
         })
         .then(data => {
-          this.setState({ name: data.name, noun: data.noun, verb: data.verb });
+          this.setState({
+            results: data
+          });
+          // this.setState({ name: data.name, noun: data.noun, verb: data.verb });
         });
     }
   };
@@ -42,13 +49,9 @@ class App extends Component {
               handleInputChage={this.handleInputChange}
               handleFormSubmit={this.handleFormSubmit}
             />
-            <Output
-              noun={this.state.noun}
-              name={this.state.name}
-              results={this.state.results}
-            />
+            <Output results={this.state.results} />
 
-      {/* <div className="outer-wrapper">
+            {/* <div className="outer-wrapper">
               <div className="inner-container">
                 <Input />
                 <Output name1="Veronica" name2="Chris" amount1="3" amount2="2" noun="apples" verb="brings"/>

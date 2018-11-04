@@ -23,10 +23,10 @@ class App extends Component {
       // Example GET request
       fetch("/.netlify/functions/get-data")
         .then(results => {
-          console.log(results); ///.json();
-          return results.json();
+          results.json();
         })
         .then(data => {
+          console.log(data);
           this.setState({
             results: data
           });

@@ -18,7 +18,7 @@ body {
 button {
   font-family: inherit;
   font-weight: 500;
-  font-size: 32px;
+  font-size: 24px;
   text-align: center;
   border: none;
   background-color: rgb(89, 206, 214);
@@ -30,10 +30,7 @@ button {
   cursor: pointer;
   margin: 18px 0;
   width: 100%;
-}
-
-button span {
-  margin: 64px;
+  padding: 9px;
 }
 
 button:focus, button:hover {
@@ -44,6 +41,7 @@ button:focus, button:hover {
 }
 
 input {
-  width: 100%;
   font-size: 25px;
+  width: calc(100% - 36px);
+  padding: 18px;
 }

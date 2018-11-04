@@ -7,14 +7,11 @@ import "./App.css";
 class App extends Component {
   state = {
     results: {
-      name: "james",
-      hair_color: "brown"
-    },
-    name: "James",
-    name2: "",
-    noun: "",
-    verb: "",
-    hair_color: "brown"
+      name1: "",
+      name2: "",
+      noun: "",
+      verb: ""
+    }
   };
 
   handleFormSubmit = inputFormula => {
@@ -24,9 +21,9 @@ class App extends Component {
       alert(`What's wrong with you.. you need to input something!`);
     } else {
       // Example GET request
-      fetch("https://swapi.co/api/people/1/")
+      fetch("/.netlify/functions/get-data")
         .then(results => {
-          console.log(results);
+          console.log(results); ///.json();
           return results.json();
         })
         .then(data => {

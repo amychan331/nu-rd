@@ -23,25 +23,38 @@ class Input extends Component {
         <div>
           <label htmlFor="comment">Enter Math Problem</label>
 
-          <form className={"form " + this.props}>
-            <div>
-              <input
-                value={this.state.inputFormula}
-                name="commentInput"
-                onChange={this.handleInputChange}
-                type="text"
-              />
 
-              <button
-                classname="btn-1"
-                type="submit"
-                name="action"
-                onClick={this.handleFormSubmit}
-              >
-                Button
-              </button>
-            </div>
-          </form>
+          <form className={"form " + this.props}>
+ 
+            <div className="form-inner">
+                <input
+                    value={this.state.inputFormula}
+                    name="mathInput"
+                    onChange={this.handleInputChange}
+                    type="text"
+                />
+           
+              <button classname="btn-1"
+                  type="submit"
+                  name="action"
+                  onClick={this.handleFormSubmit}
+                  >
+                    <span>Submit</span>
+                 </button>
+                 </div>
+          
+             <div>
+             <button classname="btn-2"
+                 type="reset"
+                 name="action"
+                 onClick={this.handleFormSubmit}
+                 >
+                   <span>Clear</span>
+                 </button>
+                 </div>
+
+              </form>
+
 
           <h2 className="gist-comment">Comments </h2>
           <div>

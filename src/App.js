@@ -34,6 +34,7 @@ class App extends Component {
     return (
       <div>
         <AppHeader />
+
         <div className="outer-wrapper">
           <div className="inner-container">
             <Input
@@ -46,6 +47,13 @@ class App extends Component {
               name={this.state.name}
               results={this.state.results}
             />
+
+      {/* <div className="outer-wrapper">
+              <div className="inner-container">
+                <Input />
+                <Output name1="Veronica" name2="Chris" amount1="3" amount2="2" noun="apples" verb="brings"/>
+              </div>
+      */}
           </div>
         </div>
       </div>

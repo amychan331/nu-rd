@@ -9,9 +9,9 @@ const Output = props => {
       <div className="output-words-container">
         <div className="output-words">
           {`
-          Hi! My name is ${props.results.name} and my hair is ${
-            props.results.hair_color
-          }
+          Question: ${props.results.name}  ${
+            props.results.hair_color 
+          } ?
           `}
 
           {/*
@@ -27,6 +27,15 @@ const Output = props => {
         </div>
       </div>
       <div className="output-answer">Answer: 1</div>
+
+     <div>
+       <h2>Provide Us Your Email and Feedback</h2>
+      <form method="POST" action="https://formspree.io/lydiarachel@gmail.com">
+        <input type="email" className="email" placeholder="Your email" />
+        <textarea className="text-area" name="message" placeholder="Feedback Message" />
+        <button type="submit">Submit</button>
+      </form>
+      </div>
     </div>
   );
 };

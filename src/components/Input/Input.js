@@ -43,6 +43,40 @@ class Input extends Component {
         </button>
       </div>
 
+
+          <form className={"form " + this.props}>
+ 
+            <div className="form-inner">
+                <input
+                    value={this.state.inputFormula}
+                    name="mathInput"
+                    onChange={this.handleInputChange}
+                    type="text"
+                />
+           
+              <button className="btn-1"
+                  type="submit"
+                  name="action"
+                  onClick={this.handleFormSubmit}
+                  >
+                    <span>Submit</span>
+                 </button>
+                 </div>
+          
+             <div>
+             <button className="btn-2"
+                 type="reset"
+                 name="action"
+                 onClick={this.handleFormSubmit}
+                 >
+                   <span>Clear</span>
+                 </button>
+                 </div>
+
+              </form>
+
+
+      {/*
       <div />
       <div className="col-inner" />
       <div className="col-inner">
@@ -58,6 +92,7 @@ class Input extends Component {
     </div>
   </div>
 </form>
+*/}
 
           <h2 className="gist-comment">Math Word Problem</h2>
           <div>

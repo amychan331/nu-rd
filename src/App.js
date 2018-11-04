@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import Input from './components/Input'
+import Input from './components/Input'
 import Output from './components/Output'
 import AppHeader from './components/AppHeader'
 import './App.css'
@@ -9,7 +9,7 @@ render () {
     return(
         <div>
         <AppHeader />
-        {/* <Input /> */}
+        <Input />
         <Output />
         </div>
     )

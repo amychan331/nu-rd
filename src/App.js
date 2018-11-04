@@ -9,12 +9,10 @@ render () {
     return(
         <div>
         <AppHeader />
-        <Input />
-        <Output />
           <div className="outer-wrapper">
               <div className="inner-container">
                 <Input />
-                <Output />
+                <Output name1="Veronica" name2="Chris" amount1="3" amount2="2" noun="apples" verb="brings"/>
               </div>
           </div>
         </div>

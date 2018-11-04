@@ -36,15 +36,15 @@ const netlifyFunction = async (event, context, cb) => {
 
   /* Query db LOOKUP whichOp */
   //TODO:
-  var verb = '%2B';//whatever
+  console.log(whichOp);
+  var verb = 'removes';// whichOp
 
   /*  GET THE NAMES+NOUNS JSON */
-  //TODO:
+
 
   /* ===> */
   // var reponseJSON = JSON.parse(  )
 
-  //TODO:
   var namesArr =  ['Luke','Leia','Lydia','Amy','Veronica']; // reponseJSON.names;
 
   //TODO:
@@ -66,7 +66,7 @@ const netlifyFunction = async (event, context, cb) => {
 
   var responseObject = { name1, name2, noun, verb };
 
-  var reponseJSON = JSON.stringify( responseObject );
+  var responseJSON = JSON.stringify( responseObject );
 
   return {
     statusCode: 200,
@@ -84,3 +84,6 @@ const netlifyFunction = async (event, context, cb) => {
 // -  event.isBase64Encoded >>> "A boolean flag to indicate if the applicable request payload is Base64-encode"
 
 exports.handler = netlifyFunction;
+
+
+curl https://postman-echo.com/get?name1=Bob&name2=Jane&noun=apple&verb=takes

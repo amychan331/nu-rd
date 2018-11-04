@@ -3,11 +3,7 @@ import "./Input.css";
 
 class Input extends Component {
   state = {
-<<<<<<< HEAD
-    inputFormula: "",
-=======
-    inputFormula: "2+2"
->>>>>>> c5f64036300cafd7980968e45cb83e97002baf7f
+    inputFormula: "2+2",
   };
   handleFormSubmit = event => {
     event.preventDefault();

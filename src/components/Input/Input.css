@@ -1,0 +1,6 @@
+.form-inner > *{
+    display: block;
+}
+.form-inner input{
+    padding: 0;
+}

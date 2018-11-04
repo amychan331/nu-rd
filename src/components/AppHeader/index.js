@@ -12,7 +12,7 @@ const AppHeader = (props) => {
           <div className='app-left-nav'>
             {/* <img src={logo} className='app-logo' alt='logo' /> */}
             <div className='app-title-text'>
-              <h1 className='app-title'>Nu-rd</h1>
+              <h1 className='app-title'>(Nu)-(rd)</h1>
               <p className='app-intro'>
                 Transforming numbers into words, one element at a time.
               </p>

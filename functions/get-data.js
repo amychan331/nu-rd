@@ -54,7 +54,7 @@ const netlifyFunction = async (event, context, cb) => {
   var randomIndx2 = randomArrNum(numberOfNames);
     // (Make sure names are different)
       while( randomIndx1 === randomIndx2) {
-        randomNameIndx2 = randomArrNum(numberOfNames);
+        randomIndx2 = randomArrNum(numberOfNames);
       }
 
   var name1 = namesArr[randomIndx1];

@@ -1,93 +1,52 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import "./Input.css";
 
-class Input extends Component{
+class Input extends Component {
   state = {
-      commentInput:"",
-  }
+    inputFormula: "2+2",
+  };
+  handleFormSubmit = event => {
+    event.preventDefault();
+    this.props.handleFormSubmit(this.state.inputFormula);
+  };
 
   handleInputChange = event => {
-      const { name, value } = event.target;
-      this.setState({
-        [name]: value
-      });
-  }
+    console.log(event.target.value);
+    this.setState({
+      inputFormula: event.target.value
+    });
+  };
 
-    hanaudleFormSubmit = event => {
-      // Preventing the default behavior of the form submit (which is to refresh the page)
-      event.preventDefault();
-      if (!this.state.commentInput) {
-    //    window.M.toast({html: "Please enter a comment before submitting!", classes: 'cyan'});
-        alert(`What's wrong with you.. you need to input something!`)
-      } else {
-          //to do .. add this to database rather than fakeComments Array above
-          //when we do this, we will not need to pass id, that will come from the db
-        // API.createComment({
-        //     comment:this.state.commentInput,
-        //     gistId: this.props._id, 
-        //     author: this.props.user._id
-        //   }).then(this.props.method)
-
-
-        // Example GET request
-        fetch('https://thisisntreal/stuff')
-            .then(stuff => {
-                console.log(`do stuff to ${stuff}`)
-            })
-
-        // Example POST
-        fetch('https://thisisntreal/newnums', {
-                method: 'POST',
-                body: {
-                    num1: this.state.num1,
-                    num2: this.state.num2,
-                    oper: this.state.oper
-                    }
-            })
-            .then(data => {
-                console.log(data)
-            })
-            .catch(err => {
-                throw new Error(err)
-            })
-      
-      }
-      
-      this.setState({
-        commentInput: ""
-      });
-    };
-  
-  render(){
-      return (
-          <div>
-          <div>
+  render() {
+    return (
+      <div>
+        <div>
           <label htmlFor="comment">Enter Math Problem</label>
 
-          <form className={"form " + this.props.hide}>
- 
-              <div>
+          <form className={"form " + this.props}>
+            <div>
               <input
-                  value={this.state.commentInput}
-                  name="commentInput"
-                  onChange={this.handleInputChange}
-                  type="text"
+                value={this.state.inputFormula}
+                name="commentInput"
+                onChange={this.handleInputChange}
+                type="text"
               />
 
-           
-              <button classname="btn-1"
-                  type="submit"
-                  name="action"
-                  onClick={this.handleFormSubmit}
-                  >
-                  Button
-                  </button>
-                  </div>
-              </form>
+              <button
+                classname="btn-1"
+                type="submit"
+                name="action"
+                onClick={this.handleFormSubmit}
+              >
+                Button
+              </button>
+            </div>
+          </form>
 
-              <h2 className="gist-comment">Comments </h2>
-              <div>
-              {/* {this.props.comments.map(comment => (
+          <h2 className="gist-comment">Comments </h2>
+          <div>
+            {(this.state.results && this.state.results.name) || ""}
+            {/* {this.props.comments.map(comment => (
                   <Comment
                       key={comment._id}
                       comment={comment.comment}
@@ -95,18 +54,11 @@ class Input extends Component{
                       date = {comment.date}
                   />
               ))} */}
-              </div>
-              
-              
-
           </div>
-
-    
-
-          </div>
-      )
-
+        </div>
+      </div>
+    );
   }
 }
 
-export default Input; 
+export default Input;

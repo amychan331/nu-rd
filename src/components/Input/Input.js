@@ -34,7 +34,7 @@ class Input extends Component {
                     type="text"
                 />
            
-              <button classname="btn-1"
+              <button className="btn-1"
                   type="submit"
                   name="action"
                   onClick={this.handleFormSubmit}
@@ -44,7 +44,7 @@ class Input extends Component {
                  </div>
           
              <div>
-             <button classname="btn-2"
+             <button className="btn-2"
                  type="reset"
                  name="action"
                  onClick={this.handleFormSubmit}

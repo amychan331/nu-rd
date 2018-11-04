@@ -31,7 +31,7 @@ class App extends Component {
             results: data
           });
           // this.setState({ name: data.name, noun: data.noun, verb: data.verb });
-        });
+        });  
     }
   };
   render() {

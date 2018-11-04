@@ -9,6 +9,8 @@ render () {
     return(
         <div>
         <AppHeader />
+        <Input />
+        <Output />
           <div className="outer-wrapper">
               <div className="inner-container">
                 <Input />

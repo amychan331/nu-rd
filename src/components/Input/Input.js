@@ -18,6 +18,13 @@ class Input extends Component {
     });
   };
 
+  handleFormClear = event => {
+    event.preventDefault();
+    this.setState({
+      inputFormula: ""
+    })
+  }
+
   render() {
     return (
       <div>
@@ -48,7 +55,7 @@ class Input extends Component {
                 className="btn-2"
                 type="reset"
                 name="action"
-                onClick={this.handleFormSubmit}
+                onClick={this.handleFormClear}
               >
                 <span>Clear</span>
               </button>

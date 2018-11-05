@@ -13,9 +13,12 @@ const Output = props => {
           ${props.results.name1} John has 2 ${props.results.noun}s. 
           ${props.results.name2} ${props.results.verb} them 2 ${props.results.noun}. 
           How many ${props.results.noun} does ${props.results.name1} now have?
+
           `}
 
           {/*
+
+
       <div className="output-container">
         <div className="output-words-container">
             <div className="output-words">

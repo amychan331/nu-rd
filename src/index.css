@@ -42,6 +42,9 @@ button:focus, button:hover {
 
 input {
   font-size: 25px;
+
+
   width: calc(100% - 36px);
   padding: 18px;
 }
+

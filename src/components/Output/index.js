@@ -10,8 +10,10 @@ const Output = props => {
         <div className="output-words">
           {`
 
-          ${props.results.name1} has ${props.results.noun}s. 
-          ${props.results.name2} ${props.results.verb} ${props.results.noun}. 
+          ${props.results.name1} has ${props.num1} ${props.results.noun}s. 
+          ${props.results.name2} ${props.results.verb} ${props.num2} ${
+            props.results.noun
+          }. 
           How many ${props.results.noun}s does ${props.results.name1} now have?
 
           `}

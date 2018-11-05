@@ -15,23 +15,42 @@ class App extends Component {
   };
 
   handleFormSubmit = inputFormula => {
+    inputFormula.replace(" ", "");
+    const separatedInput = inputFormula
+      .split("+")
+      .join(",")
+      .split("-")
+      .join(",")
+      .split("*")
+      .join(",")
+      .split("/")
+      .join(",")
+      .split(",");
+    const operand = inputFormula.substr(separatedInput[0].length, 1);
+
+    console.log(separatedInput);
+    console.log(encodeURI(operand));
     // Preventing the default behavior of the form submit (which is to refresh the page)
     if (inputFormula.length === 0) {
       //    window.M.toast({html: "Please enter a comment before submitting!", classes: 'cyan'});
       alert(`What's wrong with you.. you need to input something!`);
     } else {
       // Example GET request
-      fetch(`/.netlify/functions/get-data/${encodeURI(inputFormula)}`)
+      fetch(
+        `/.netlify/functions/get-data?operator=${encodeURIComponent(operand)}`
+      )
         .then(results => {
           return results.json();
         })
         .then(data => {
           console.log(data);
           this.setState({
-            results: data
+            results: data,
+            num1: separatedInput[0],
+            num2: separatedInput[1]
           });
           // this.setState({ name: data.name, noun: data.noun, verb: data.verb });
-        });  
+        });
     }
   };
   render() {
@@ -46,7 +65,7 @@ class App extends Component {
               handleInputChage={this.handleInputChange}
               handleFormSubmit={this.handleFormSubmit}
             />
-            <Output results={this.state.results} />
+            <Output num1={this.state.num1} num2={this.state.num2} results={this.state.results} />
 
             {/* <div className="outer-wrapper">
               <div className="inner-container">

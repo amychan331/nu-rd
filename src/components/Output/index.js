@@ -35,10 +35,10 @@ const Output = props => {
       <div className="output-answer">Answer: 4</div>
 
       <div>
-        <h2>Provide Us Your Email and Feedback</h2>
+        <h3>Provide Us Your Email and Feedback</h3>
         <form method="POST" action="https://formspree.io/lydiarachel@gmail.com">
           <input type="email" className="email" placeholder="Your email" />
-          <textarea
+          <input
             className="text-area"
             name="message"
             placeholder="Feedback Message"

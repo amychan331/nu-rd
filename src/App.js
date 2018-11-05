@@ -21,7 +21,7 @@ class App extends Component {
       alert(`What's wrong with you.. you need to input something!`);
     } else {
       // Example GET request
-      fetch("/.netlify/functions/get-data")
+      fetch(`/.netlify/functions/get-data/${encodeURI(inputFormula)}`)
         .then(results => {
           return results.json();
         })

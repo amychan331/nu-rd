@@ -15,7 +15,8 @@ const netlifyFunction = (event, context, cb) => {
 
   const getDatabaseArrs = () => {
     console.log('axios getting...')
-    return axios.get('http://localhost:9000/read-randomized-data')
+    // return axios.get('http://localhost:9000/read-randomized-data')
+    return axios.get('/.netlify/functions/read-randomized-data')
       .then( response => {
         return response.data
       })

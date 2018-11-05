@@ -1,7 +1,7 @@
 .output-words-container{
     border: solid gray 1px;
     background: #fff;
-    width: 500px;
+    width: 100%;
     height: 200px;
 }
 .output-words{

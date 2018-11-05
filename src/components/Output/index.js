@@ -36,7 +36,7 @@ const Output = props => {
         <h2>Provide Us Your Email and Feedback</h2>
         <form method="POST" action="https://formspree.io/lydiarachel@gmail.com">
           <input type="email" className="email" placeholder="Your email" />
-          <textarea
+          <input
             className="text-area"
             name="message"
             placeholder="Feedback Message"

@@ -1,7 +1,7 @@
 .col-container{
     display: flex;
 }
-.col-inner{
+.col{
     flex: 1;
 }
 .space{

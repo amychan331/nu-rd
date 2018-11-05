@@ -4,6 +4,6 @@
 .col-inner{
     flex: 1;
 }
-.form-inner input{
-    padding: 0;
+.space{
+    flex: 0.1;
 }

@@ -7,10 +7,7 @@ const client = new faunadb.Client({
 })
 
 exports.handler = (event, context, callback) => {
-  const data = JSON.parse(event.body)
   const id = getId(event.path)
-  console.log(data)
-  console.log(id)
   console.log('Function `read-query-data` invoked')
   return client.query(q.Get(q.Match(q.Index("verb_by_operator"), id)))
   .then((response) => {

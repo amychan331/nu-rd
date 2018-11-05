@@ -1,76 +1,78 @@
 import faunadb from 'faunadb';
 import querystring from "querystring";
+import axios from 'axios';
 
-//    start of URL [changes!]: https://keen-boyd-38d83f.netlify.com/
-// https://master--keen-boyd-38d83f.netlify.com/.nelify/functions/get-data?operator=%2B
-//    ending of URL: /.netlify/functions/get-data?operator=%2B    <<
-// OUTPUT: { name1: 'Veronica', name2: 'Amy', noun: 'books', verb: 'gives'};
+const netlifyFunction = (event, context, cb) => {
+//http://localhost:9000/read-randomized-data
 
-const checkForFaunaKey = () =>{
-    if (!process.env.FAUNADB_SERVER_SECRET) {
-      console.log(chalk.yellow('Required FAUNADB_SERVER_SECRET enviroment variable not found.'))
-      process.exit(1)
-      return false;
-    }
-    return true;
-}
+  const randomArrNum = (limit) => {
+    // generate number between 0 and ___
+    return Math.floor(Math.random() * limit )
+  }
 
-const randomArrNum = (limit) => {
-  // generate number between 0 and ___
-  return Math.floor(Math.random() * limit )
-}
+  const setNamesArr = data => { console.log('setting Names'); let namesArr = data['names']; return namesArr; }
+  const setNounsArr = data => { console.log('setting Nouns'); let nounsArr = data['nouns']; return nounsArr; }
 
-const netlifyFunction = async (event, context, cb) => {
+  const getDatabaseArrs = () => {
+    console.log('axios getting...')
+    return axios.get('http://localhost:9000/read-randomized-data')
+      .then( response => {
+        return response.data
+      })
+      .catch((error) => {
+        return cb(null, {
+          statusCode: 400,
+          body: JSON.stringify(error)
+        })
+      });
+  }
 
-  const whichOp = event.queryStringParameters.operator || 'does something';
+  const readyResponse = (data) => {
+    return new Promise( (resolve, reject) => {
+      var namesArr = setNamesArr(data);
+      var numOfNames = namesArr.length;
+        var randomIndx1 = randomArrNum(numOfNames);
+        var randomIndx2 = randomArrNum(numOfNames);
+        while ( randomIndx1 === randomIndx2) {
+          randomIndx2 = randomArrNum(numOfNames);
+        }
+      var name1 = namesArr[randomIndx1];
+      var name2 = namesArr[randomIndx2];
 
-  // if (!checkForFaunaKey()){
-  //   return {
-  //     statusCode: 500,
-  //     body: JSON.stringify(error)
-  //   };
-  // }
+      var nounsArr = setNounsArr(data);
+      var numOfNouns = nounsArr.length;
+      var randomNounIndx = randomArrNum(numOfNouns);
+      var noun = nounsArr[randomNounIndx];
 
-  /* Query db LOOKUP whichOp */
-  //TODO:
-  console.log(whichOp);
-  var verb = 'removes';// whichOp
+      var verb = 'does a thing';
 
-  /*  GET THE NAMES+NOUNS JSON */
+      var responseObject = { name1, name2, noun, verb };
+      var responseJSON = JSON.stringify( responseObject );
+      console.log('responseJSON>> ', responseJSON);
 
-
-  /* ===> */
-  // var reponseJSON = JSON.parse(  )
-
-  var namesArr =  ['Luke','Leia','Lydia','Amy','Veronica']; // reponseJSON.names;
-
-  //TODO:
-  var nounsArr =  ['apple','pencil','book']; // reponseJSON.nouns;
-  var numberOfNames = namesArr.length;
-  var numberOfNouns = nounsArr.length;
-  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-  /* Put the response object together */
-  var randomIndx1 = randomArrNum(numberOfNames);
-  var randomIndx2 = randomArrNum(numberOfNames);
-    // (Make sure names are different)
-      while( randomIndx1 === randomIndx2) {
-        randomIndx2 = randomArrNum(numberOfNames);
+      resolve(responseJSON);
+    })
+  }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+  const whichOp = event.queryStringParameters.operator || 'foo'; // %2B
+  return getDatabaseArrs()
+    .then( data => {
+          return readyResponse(data);
+    })
+    .then( resstring => {
+      return {
+        statusCode:200,
+        body: resstring
       }
+    })
+    .catch((error) => {
+      return cb(null, {
+        statusCode: 400,
+        body: JSON.stringify(error)
+      })
+    })
+};
 
-  var name1 = namesArr[randomIndx1];
-  var name2 = namesArr[randomIndx2];
-  var noun = nounsArr[ randomArrNum(numberOfNouns)  ];
-
-  var responseObject = { name1, name2, noun, verb };
-
-  var responseJSON = JSON.stringify( responseObject );
-
-  return {
-    statusCode: 200,
-    body: responseJSON
-  };
-
-}
 
 // Properties on the event object:
 // -  event.path >>> "Path parameter",

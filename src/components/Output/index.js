@@ -9,9 +9,9 @@ const Output = props => {
       <div className="output-words-container">
         <div className="output-words">
           {`
-          Question: 
-          ${props.results.name1} John has 2 ${props.results.noun}s. 
-          ${props.results.name2} ${props.results.verb} them 2 ${props.results.noun}. 
+
+          ${props.results.name1} John has ${props.results.noun}s. 
+          ${props.results.name2} ${props.results.verb} them ${props.results.noun}. 
           How many ${props.results.noun} does ${props.results.name1} now have?
 
           `}

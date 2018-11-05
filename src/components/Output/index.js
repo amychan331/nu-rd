@@ -10,9 +10,11 @@ const Output = props => {
         <div className="output-words">
           {`
 
-          ${props.results.name1} John has ${props.results.noun}s. 
-          ${props.results.name2} ${props.results.verb} them ${props.results.noun}. 
-          How many ${props.results.noun} does ${props.results.name1} now have?
+          ${props.results.name1} has ${props.num1} ${props.results.noun}s. 
+          ${props.results.name2} ${props.results.verb} ${props.num2} ${
+            props.results.noun
+          }. 
+          How many ${props.results.noun}s does ${props.results.name1} now have?
 
           `}
 

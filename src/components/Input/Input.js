@@ -8,6 +8,7 @@ class Input extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     this.props.handleFormSubmit(this.state.inputFormula);
+    
   };
 
   handleInputChange = event => {

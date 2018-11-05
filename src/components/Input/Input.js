@@ -3,12 +3,11 @@ import "./Input.css";
 
 class Input extends Component {
   state = {
-    inputFormula: "",
+    inputFormula: ""
   };
   handleFormSubmit = event => {
     event.preventDefault();
     this.props.handleFormSubmit(this.state.inputFormula);
-    
   };
 
   handleInputChange = event => {
@@ -22,8 +21,8 @@ class Input extends Component {
     event.preventDefault();
     this.setState({
       inputFormula: ""
-    })
-  }
+    });
+  };
 
   render() {
     return (
@@ -39,34 +38,34 @@ class Input extends Component {
                 onChange={this.handleInputChange}
                 type="text"
               />
+              <div className="col-container">
+                <div className="col">
+                  <button
+                    className="btn-1"
+                    type="submit"
+                    name="action"
+                    onClick={this.handleFormSubmit}
+                  >
+                    <span>Submit</span>
+                  </button>
+                </div>
 
-              <button
-                className="btn-1"
-                type="submit"
-                name="action"
-                onClick={this.handleFormSubmit}
-              >
-                <span>Submit</span>
-              </button>
-            </div>
-
-            <div>
-              <button
-                className="btn-2"
-                type="reset"
-                name="action"
-                onClick={this.handleFormClear}
-              >
-                <span>Clear</span>
-              </button>
+                <div className="col">
+                  <button
+                    className="btn-2"
+                    type="reset"
+                    name="action"
+                    onClick={this.handleFormClear}
+                  >
+                    <span>Clear</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </form>
 
           <h3 className="gist-comment">Math Word Problem</h3>
-          <div>
-            {(this.state.results && this.state.results.name) || ""}
-
-          </div>
+          <div>{(this.state.results && this.state.results.name) || ""}</div>
         </div>
       </div>
     );

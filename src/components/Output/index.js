@@ -10,14 +10,14 @@ const Output = props => {
         <div className="output-words">
           {`
           Question: 
-          Johnny has 2 apples.  Susie gives Johnny 2 apples.  How many apples does Johnny now have?
+          ${props.results.name1} John has 2 ${props.results.noun}s. 
+          ${props.results.name2} ${props.results.verb} them 2 ${props.results.noun}. 
+          How many ${props.results.noun} does ${props.results.name1} now have?
 
           `}
 
           {/*
-          // ${props.results.name1} John has 2 ${props.results.noun}s. 
-          // ${props.results.name2} ${props.results.verb} them 2 ${props.results.noun}. 
-          // How many ${props.results.noun} does ${props.results.name1} now have?
+
 
       <div className="output-container">
         <div className="output-words-container">

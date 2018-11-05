@@ -73,8 +73,6 @@ const netlifyFunction = (event, context, cb) => {
       })
     })
 };
-
-
 // Properties on the event object:
 // -  event.path >>> "Path parameter",
 // -  event.httpMethod >>> "Incoming request's method name"
@@ -83,4 +81,5 @@ const netlifyFunction = (event, context, cb) => {
 // -  event.body >>> "A JSON string of the request payload."
 // -  event.isBase64Encoded >>> "A boolean flag to indicate if the applicable request payload is Base64-encode"
 
+// branch deploy:https://rich_fixez--keen-boyd-38d83f.netlify.com/.netlify/functions/get-data
 exports.handler = netlifyFunction;

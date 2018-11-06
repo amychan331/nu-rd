@@ -50,6 +50,8 @@ class Input extends Component {
                   </button>
                 </div>
 
+                <div className="col space"></div>
+
                 <div className="col">
                   <button
                     className="btn-2"

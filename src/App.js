@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import AppHeader from "./components/AppHeader";
 import Input from "./components/Input";
 import Output from "./components/Output";
-import AppHeader from "./components/AppHeader";
+import Feedback from "./components/Feedback";
 import "./App.css";
 
 class App extends Component {
@@ -60,19 +61,21 @@ class App extends Component {
 
         <div className="outer-wrapper">
           <div className="inner-container">
+            <h3>Enter Math Equation</h3>
             <Input
               inputFormula={this.state.inputFormula}
               handleInputChage={this.handleInputChange}
               handleFormSubmit={this.handleFormSubmit}
             />
-            <Output num1={this.state.num1} num2={this.state.num2} results={this.state.results} />
-
-            {/* <div className="outer-wrapper">
-              <div className="inner-container">
-                <Input />
-                <Output name1="Veronica" name2="Chris" amount1="3" amount2="2" noun="apples" verb="brings"/>
-              </div>
-      */}
+            <h3>Math Word Problem</h3>
+            {/* <div>{(this.state.results && this.state.results.name) || ""}</div> */}
+            <Output
+              num1={this.state.num1}
+              num2={this.state.num2}
+              results={this.state.results}
+            />
+            <h3>Provide Us Your Email and Feedback</h3>
+            <Feedback />
           </div>
         </div>
       </div>
